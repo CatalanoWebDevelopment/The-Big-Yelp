@@ -9,7 +9,7 @@
 
   <h2>What are you looking for?</h2>
   <p>Your Price: </p>
-  <select id="active" #price>
+  <select #price>
     <option value="1">$</option>
     <option value="2">$$</option>
     <option value="3">$$$</option>
@@ -32,7 +32,7 @@
   <button (click)="onClick(price.value, location.value, search.value)">Search</button>
 
   <div *ngFor="let business of businesses" ng-If="!business.is_closed">
-    <div>
+    <div class="businessContainer">
       <img src="{{ business.image_url }}" style="width:200px; height: 200px;" />
       <h1>{{ business.name }}</h1>
       <h3>Our Rating: {{ business.rating }}</h3>
