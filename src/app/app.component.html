@@ -31,7 +31,7 @@
 
   <button (click)="onClick(price.value, location.value, search.value)">Search</button>
 
-  <div *ngFor="let business of businesses" ng-If="!business.is_closed">
+  <div *ngFor="let business of businesses | slice:0:1" ng-If="!business.is_closed">
     <div class="businessContainer">
       <img src="{{ business.image_url }}" style="width:200px; height: 200px;" />
       <h1>{{ business.name }}</h1>
