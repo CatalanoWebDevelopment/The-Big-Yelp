@@ -1,6 +1,50 @@
-<div class="container">
-  <div class="center">
+<div class="center">
+  <div>
     <h1>The Big Yelp</h1>
+    <img
+      width="200"
+      alt="The Big Yelp Logo"
+      src="https://www.adweek.com/files/imagecache/node-blog/persp-big-gulp-01-2015.jpg">
   </div>
+
+  <h2>What are you looking for?</h2>
+  <p>Your Price: </p>
+  <select id="active" #price>
+    <option value="1">$</option>
+    <option value="2">$$</option>
+    <option value="3">$$$</option>
+    <option value="4">$$$$</option>
+  </select>
+
+  <hr>
+
+  <p>Your Location: </p>
+  <input #location type="text" placeholder="Enter Specific Location for Search" />
+
+  <br><br>
+  <hr>
+
+  <p>What food are we looking for? </p>
+  <input #search type="text" placeholder="Food Type" />
+
+  <br><br>
+
+  <button (click)="onClick(price.value, location.value, search.value)">Search</button>
+
+  <div *ngFor="let business of businesses" ng-If="!business.is_closed">
+    <div>
+      <img src="{{ business.image_url }}" style="width:200px; height: 200px;" />
+      <h1>{{ business.name }}</h1>
+      <h3>Our Rating: {{ business.rating }}</h3>
+      <h3>Cost: {{ business.price }}</h3>
+      <h3>Get in Touch: {{ business.phone }}</h3>
+      <h3>Address: 
+        {{ business.location.address1 }}, 
+        {{ business.location.city }} 
+        {{ business.location.zip_code }}
+      </h3>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
 </div>
 

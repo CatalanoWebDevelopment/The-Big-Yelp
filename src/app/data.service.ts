@@ -11,7 +11,7 @@ export class DataService {
   searchRestaurants(search, location, price): Observable<any> {
     const options = {
       headers: new HttpHeaders({
-        Authorization: `Bearer SiJqNHg3CrbnCUl5Jt3qEOvdQzA4e_l4BcPw3Ky5RaIZoQQCSj1DhtizYDym9Gj4z7yoIxGjFEIW6TWNc9LUwUFPmDRC45jYeJUP2bQigO2xSciqVt7n4scukEfrW3Yx`
+        Authorization: "Bearer SiJqNHg3CrbnCUl5Jt3qEOvdQzA4e_l4BcPw3Ky5RaIZoQQCSj1DhtizYDym9Gj4z7yoIxGjFEIW6TWNc9LUwUFPmDRC45jYeJUP2bQigO2xSciqVt7n4scukEfrW3Yx"
       })
     };
     return this.http.get(
